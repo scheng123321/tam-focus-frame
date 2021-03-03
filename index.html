@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+        }
+        p {
+            font-family: sans-serif;
+            margin: 0;
+            height: 20px;
+            display: inline-block;
+        }
+        a {
+            color: #777511;
+            text-decoration: none;
+        }
+        iframe {
+            height: calc(100vh - 20px);
+            width: 100vw;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <p>Click <a href="#" onclick="document.querySelector('iframe').focus()">here</a> to fix keyboard controls if they are not working.</p>
+    <script>
+        var url = (new window.URL(window.location.href)).searchParams.get('url');
+        if(url){
+            var iframe = document.createElement('iframe');
+            iframe.src = url;
+            document.body.appendChild(iframe);
+        }
+    </script>
+</body>
+
+</html>
